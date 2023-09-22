@@ -17,5 +17,11 @@ public class Main {
         }
         System.out.println("while loop is end");
 
+        int j=100;
+        do {
+            System.out.println(i);
+            j+=2;
+        }while (j<5);
+        System.out.println("do while loop is end");
     }
 }
