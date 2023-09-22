@@ -14,5 +14,21 @@ public class Main {
         System.out.println(chars);
         System.out.println(message.indexOf("is"));
         System.out.println(message.lastIndexOf("d"));
+
+        System.out.println(message.replace("a", "-"));
+
+        System.out.println(message.substring(4));
+        System.out.println(message.substring(0, 8));
+        System.out.println(message.substring(4, 8));
+
+        for (String word : message.split("  ")) {
+            System.out.println(word);
+            System.out.println(message.toLowerCase());
+            System.out.println(message.toUpperCase());
+
+            String message1 = "    Today is a good day!   ";
+            System.out.println(message1);
+            System.out.println(message1.trim());
+        }
     }
 }
