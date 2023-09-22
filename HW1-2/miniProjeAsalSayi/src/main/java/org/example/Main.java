@@ -4,13 +4,8 @@ public class Main {
     public static void main(String[] args) {
         int value = 19;
 
-        primeCheck(value);
-
-    }
-
-    private static void primeCheck(int value) {
         boolean isPrime = true;
-        if (value <1) {
+        if (value<1) {
             System.out.println("Invalid number");
             return;
         }
@@ -32,5 +27,6 @@ public class Main {
         } else {
             System.out.println("no Prime");
         }
+
     }
 }
