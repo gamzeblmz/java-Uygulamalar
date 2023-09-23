@@ -3,11 +3,6 @@ package org.example;
 public class Main {
     public static void main(String[] args) {
         int number = 28;
-        perfectNumber(number);
-
-    }
-
-    private static void perfectNumber(int number) {
         int total = 0;
 
         if (number < 1) {
@@ -26,5 +21,6 @@ public class Main {
         else {
             System.out.println("Bu mükemmel sayı değildir! ");
         }
+
     }
 }
