@@ -5,10 +5,9 @@ import org.example.entities.Product;
 
 public class Main {
     public static void main(String[] args) throws Exception {
-        Product product = new Product(1, "Iphone xr", 8);
+        Product product = new Product(1, "Iphone xr", 10000);
         ProductManager productManager = new ProductManager();
         productManager.add(product);
-
 
     }
 }
