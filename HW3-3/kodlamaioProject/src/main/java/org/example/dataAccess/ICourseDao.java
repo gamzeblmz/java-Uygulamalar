@@ -9,5 +9,5 @@ public interface ICourseDao {
     public List<Course> getAll();
     public void update(Course course);
     public void delete(int id);
-    public void getById(int id);
+    public Course getById(int id);
 }

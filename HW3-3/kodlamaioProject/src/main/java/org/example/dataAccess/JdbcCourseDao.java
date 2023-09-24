@@ -4,7 +4,7 @@ import org.example.entities.Course;
 
 import java.util.List;
 
-public class JdbcCourseDao implements ICourseDao{
+public class JdbcCourseDao implements ICourseDao {
     @Override
     public void add(Course course) {
 
@@ -26,7 +26,7 @@ public class JdbcCourseDao implements ICourseDao{
     }
 
     @Override
-    public void getById(int id) {
-
+    public Course getById(int id) {
+        return null;
     }
 }

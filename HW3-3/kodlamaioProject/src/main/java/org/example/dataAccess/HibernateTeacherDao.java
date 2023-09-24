@@ -1,10 +1,11 @@
 package org.example.dataAccess;
 
 import org.example.entities.Category;
+import org.example.entities.Teacher;
 
 import java.util.List;
 
-public class HibernateTeacherDao implements ITeacherDao{
+public class HibernateTeacherDao implements ITeacherDao {
     @Override
     public void add(Category category) {
 
@@ -26,7 +27,7 @@ public class HibernateTeacherDao implements ITeacherDao{
     }
 
     @Override
-    public void getById(int id) {
-
+    public Teacher getById(int id) {
+        return null;
     }
 }

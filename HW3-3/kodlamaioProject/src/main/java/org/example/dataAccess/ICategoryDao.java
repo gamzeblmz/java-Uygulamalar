@@ -9,5 +9,5 @@ public interface ICategoryDao {
     public List<Category> getAll();
     public void update(Category category);
     public void delete(int id);
-    public void getById(int id);
+    public Category getById(int id);
 }

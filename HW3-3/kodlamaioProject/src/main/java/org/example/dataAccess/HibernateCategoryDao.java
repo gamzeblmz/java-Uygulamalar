@@ -4,7 +4,7 @@ import org.example.entities.Category;
 
 import java.util.List;
 
-public class HibernateCategoryDao implements ICategoryDao{
+public class HibernateCategoryDao implements ICategoryDao {
     @Override
     public void add(Category category) {
 
@@ -26,7 +26,7 @@ public class HibernateCategoryDao implements ICategoryDao{
     }
 
     @Override
-    public void getById(int id) {
-
+    public Category getById(int id) {
+        return null;
     }
 }

@@ -26,7 +26,7 @@ public class JdbcCategoryDao implements ICategoryDao {
     }
 
     @Override
-    public void getById(int id) {
-
+    public Category getById(int id) {
+        return null;
     }
 }
