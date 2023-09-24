@@ -12,5 +12,9 @@ public class Main {
         customerManager.getCustomer();
         customerManager.baseDatabaseManager= new SqlServerDatabaseManager();
         customerManager.getCustomer();
+
+        //bir sisteme yeni bir özellik getirildiğinde mevcut kodlar değişmemeli
+        customerManager.baseDatabaseManager=new MysqlDatabaseManager();
+        customerManager.getCustomer();
     }
 }
