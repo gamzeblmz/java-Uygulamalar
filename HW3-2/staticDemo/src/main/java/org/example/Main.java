@@ -8,6 +8,6 @@ public class Main {
         product.name = "mouse";
         productManager.add(product);
 
-        //DatabaseHelper.Connection.createConnection();
+        DatabaseHelper.Connection.createConnection();
     }
 }
