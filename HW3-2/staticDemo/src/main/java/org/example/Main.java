@@ -7,5 +7,7 @@ public class Main {
         product.id = 1;
         product.name = "mouse";
         productManager.add(product);
+
+        //DatabaseHelper.Connection.createConnection();
     }
 }
