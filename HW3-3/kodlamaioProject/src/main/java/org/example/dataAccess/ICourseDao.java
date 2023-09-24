@@ -8,6 +8,6 @@ public interface ICourseDao {
     public void add(Course course);
     public List<Course> getAll();
     public void update(Course course);
-    public void delete(int id);
+    public void delete(Course course);
     public Course getById(int id);
 }

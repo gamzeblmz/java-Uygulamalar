@@ -10,13 +10,13 @@ public class HibernateCourseDao implements ICourseDao {
 
     @Override
     public void add(Course course) {
-        System.out.println("course added to database with JDBC" + course.getName());
+        System.out.println("course added to database with Hibernate" + course.getName());
         courses.add(course);
     }
 
     @Override
     public List<Course> getAll() {
-        if(!courses.isEmpty()){
+        if (!courses.isEmpty()) {
             return courses;
         }
         return null;
@@ -24,16 +24,22 @@ public class HibernateCourseDao implements ICourseDao {
 
     @Override
     public void update(Course course) {
-
+        System.out.println("Updated in database with Hibernate : " + course.getName());
     }
 
     @Override
-    public void delete(int id) {
-
+    public void delete(Course course) {
+       courses.remove(course);
+        System.out.println("course is deleted in database with Hibernate");
     }
 
     @Override
     public Course getById(int id) {
-         return null;
+        for (Course course1 : courses) {
+            if (course1.getId()==id) {
+               return course1;
+            }
+        }
+        return null;
     }
 }
