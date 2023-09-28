@@ -37,7 +37,7 @@ public class HibernateCategoryDao implements ICategoryDao {
     @Override
     public void delete(Category category) {
         categories.remove(category);
-        System.out.println("course is deleted in database with Hibernate");
+        System.out.println("category is deleted in database with Hibernate");
     }
 
     @Override
