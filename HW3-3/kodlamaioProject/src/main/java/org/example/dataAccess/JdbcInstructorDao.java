@@ -10,7 +10,7 @@ public class JdbcInstructorDao implements IInstructor {
 
     @Override
     public void add(Instructor instructor) {
-        System.out.println("Teacher added to database with JDBC" + instructor.getFirstName() + " " + instructor.getLastName());
+        System.out.println("Teacher added to database with JDBC: " + instructor.getFirstName() + " " + instructor.getLastName());
         instructors.add(instructor);
     }
 

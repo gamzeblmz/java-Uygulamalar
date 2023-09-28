@@ -10,7 +10,7 @@ public class JdbcCourseDao implements ICourseDao {
 
     @Override
     public void add(Course course) {
-        System.out.println("course added to database with JDBC" + course.getName());
+        System.out.println("course added to database with JDBC: " + course.getName());
         courses.add(course);
     }
 

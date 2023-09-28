@@ -12,8 +12,11 @@ public class CourseManager {
         this.iCourseDao = iCourseDao;
     }
 
-
     public void add(Course course) {
+        if (course.getPrice() < 0) {
+            System.out.println("The price of a course cannot be less than 0");
+            return;
+        }
         List<Course> courses = iCourseDao.getAll();
         if (courses != null) {
             for (Course course1 : courses) {
@@ -26,23 +29,21 @@ public class CourseManager {
         iCourseDao.add(course);
     }
 
-
     public List<Course> getAll() {
-        return null;
+        return iCourseDao.getAll();
     }
-
 
     public void update(Course course) {
-
+        iCourseDao.update(course);
     }
 
-
-    public void delete(int id) {
-
+    public void delete(Course course) {
+        iCourseDao.delete(course);
     }
 
-
-    public void getById(int id) {
-
+    public Course getById(int id) {
+        Course course = iCourseDao.getById(id);
+        System.out.println(course.getName());
+        return course;
     }
 }

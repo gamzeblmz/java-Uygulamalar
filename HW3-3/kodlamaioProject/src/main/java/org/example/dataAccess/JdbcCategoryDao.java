@@ -37,7 +37,7 @@ public class JdbcCategoryDao implements ICategoryDao {
     @Override
     public void delete(Category category) {
         categories.remove(category);
-        System.out.println("category is deleted in database with JDBC");
+        System.out.println("category is deleted in database with JDBC: ");
     }
 
     @Override

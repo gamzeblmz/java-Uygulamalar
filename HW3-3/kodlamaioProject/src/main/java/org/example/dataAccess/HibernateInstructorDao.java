@@ -10,7 +10,7 @@ public class HibernateInstructorDao implements IInstructor {
 
     @Override
     public void add(Instructor instructor) {
-        System.out.println("Teacher added to database with Hibernate" + instructor.getFirstName()+" "+ instructor.getLastName());
+        System.out.println("Teacher added to database with Hibernate: " + instructor.getFirstName()+" "+ instructor.getLastName());
         instructors.add(instructor);
     }
 
