@@ -1,10 +1,11 @@
-package org.example.business;
+package org.example.business.concretes;
 
+import org.example.business.abstracts.ITeacherManager;
 import org.example.entities.Instructor;
 
 import java.util.List;
 
-public class TeacherManager implements ITeacherManager{
+public class TeacherManager implements ITeacherManager {
 
     @Override
     public void add(Instructor instructor) {

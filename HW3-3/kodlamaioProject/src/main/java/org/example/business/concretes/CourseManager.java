@@ -1,10 +1,12 @@
-package org.example.business;
+package org.example.business.concretes;
 
+import org.example.business.abstracts.ICourseManager;
 import org.example.entities.Course;
 
 import java.util.List;
 
-public class CourseManager implements ICourseManager{
+public class CourseManager implements ICourseManager {
+
 
     @Override
     public void add(Course course) {

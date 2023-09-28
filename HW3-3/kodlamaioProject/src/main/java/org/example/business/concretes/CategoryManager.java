@@ -1,10 +1,11 @@
-package org.example.business;
+package org.example.business.concretes;
 
+import org.example.business.abstracts.ICategoryManager;
 import org.example.entities.Category;
 
 import java.util.List;
 
-public class CategoryManager implements ICategoryManager{
+public class CategoryManager implements ICategoryManager {
     @Override
     public void add(Category category) {
 

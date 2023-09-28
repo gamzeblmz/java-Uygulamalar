@@ -1,4 +1,4 @@
-package org.example.business;
+package org.example.business.abstracts;
 
 import org.example.entities.Category;
 import java.util.List;
