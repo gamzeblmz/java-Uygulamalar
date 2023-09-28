@@ -24,20 +24,27 @@ public class HibernateCourseDao implements ICourseDao {
 
     @Override
     public void update(Course course) {
-        System.out.println("Updated in database with Hibernate : " + course.getName());
+        for (Course course1 : courses) {
+            if (course1.getId() == course.getId()) {
+                course1.setName(course.getName());
+                System.out.println("Updated in database with Hibernate : " + course.getName());
+                return;
+            }
+        }
+        System.out.println("course not found with Hibernate");
     }
 
     @Override
     public void delete(Course course) {
-       courses.remove(course);
+        courses.remove(course);
         System.out.println("course is deleted in database with Hibernate");
     }
 
     @Override
     public Course getById(int id) {
         for (Course course1 : courses) {
-            if (course1.getId()==id) {
-               return course1;
+            if (course1.getId() == id) {
+                return course1;
             }
         }
         return null;

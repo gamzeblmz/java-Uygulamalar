@@ -1,14 +1,14 @@
 package org.example.entities;
 
-public class Teacher {
+public class Instructor {
     private int id;
     private String firstName;
     private String lastName;
 
-    public Teacher() {
+    public Instructor() {
     }
 
-    public Teacher(int id, String firstName, String lastName) {
+    public Instructor(int id, String firstName, String lastName) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;

@@ -10,7 +10,7 @@ public class JdbcCourseDao implements ICourseDao {
 
     @Override
     public void add(Course course) {
-        System.out.println("course added to database with Jdbc" + course.getName());
+        System.out.println("course added to database with JDBC" + course.getName());
         courses.add(course);
     }
 
@@ -24,13 +24,20 @@ public class JdbcCourseDao implements ICourseDao {
 
     @Override
     public void update(Course course) {
-        System.out.println("Updated in database with Hibernate : " + course.getName());
+        for (Course course1 : courses) {
+            if (course1.getId() == course.getId()) {
+                course1.setName(course.getName());
+                System.out.println("Updated in database with JDBC : " + course.getName());
+                return;
+            }
+        }
+        System.out.println("course not found with JDBC");
     }
 
     @Override
     public void delete(Course course) {
         courses.remove(course);
-        System.out.println("course is deleted in database with Hibernate");
+        System.out.println("course is deleted in database with JDBC");
     }
 
     @Override

@@ -1,23 +1,23 @@
 package org.example.business;
 
-import org.example.entities.Teacher;
+import org.example.entities.Instructor;
 
 import java.util.List;
 
 public class TeacherManager implements ITeacherManager{
 
     @Override
-    public void add(Teacher teacher) {
+    public void add(Instructor instructor) {
 
     }
 
     @Override
-    public List<Teacher> getAll() {
+    public List<Instructor> getAll() {
         return null;
     }
 
     @Override
-    public void update(Teacher teacher) {
+    public void update(Instructor instructor) {
 
     }
 

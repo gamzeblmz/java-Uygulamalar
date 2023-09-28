@@ -1,13 +1,13 @@
 package org.example.business;
 
-import org.example.entities.Teacher;
+import org.example.entities.Instructor;
 
 import java.util.List;
 
 public interface ITeacherManager {
-    public void add(Teacher teacher);
-    public List<Teacher> getAll();
-    public void update(Teacher teacher);
+    public void add(Instructor instructor);
+    public List<Instructor> getAll();
+    public void update(Instructor instructor);
     public void delete(int id);
     public void getById(int id);
 }
