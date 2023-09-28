@@ -8,6 +8,6 @@ public interface ICategoryDao {
     public void add(Category category);
     public List<Category> getAll();
     public void update(Category category);
-    public void delete(int id);
+    public void delete(Category category);
     public Category getById(int id);
 }
