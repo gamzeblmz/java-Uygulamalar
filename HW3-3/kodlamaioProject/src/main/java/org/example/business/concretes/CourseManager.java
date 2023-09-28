@@ -1,34 +1,47 @@
 package org.example.business.concretes;
 
-import org.example.business.abstracts.ICourseManager;
+import org.example.dataAccess.ICourseDao;
 import org.example.entities.Course;
 
 import java.util.List;
 
-public class CourseManager implements ICourseManager {
+public class CourseManager {
+    ICourseDao iCourseDao;
 
-
-    @Override
-    public void add(Course course) {
-
+    public CourseManager(ICourseDao iCourseDao) {
+        this.iCourseDao = iCourseDao;
     }
 
-    @Override
+
+    public void add(Course course) {
+        List<Course> courses = iCourseDao.getAll();
+        if (courses != null) {
+            for (Course course1 : courses) {
+                if (course1.getName() == course.getName()) {
+                    System.out.println("You cannot save a course with the same name.");
+                    return;
+                }
+            }
+        }
+        iCourseDao.add(course);
+    }
+
+
     public List<Course> getAll() {
         return null;
     }
 
-    @Override
+
     public void update(Course course) {
 
     }
 
-    @Override
+
     public void delete(int id) {
 
     }
 
-    @Override
+
     public void getById(int id) {
 
     }
