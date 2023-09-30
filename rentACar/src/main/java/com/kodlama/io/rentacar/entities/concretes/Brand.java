@@ -1,26 +1,25 @@
 package com.kodlama.io.rentacar.entities.concretes;
 
-import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import lombok.*;
 
 @Entity
-@Table(name = "Brand")
+@Table(name = "brands")
+@Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Data
 public class Brand {
     @Id
-    @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    int id;
+    @Column(name = "id")
+    private int id;
 
     @Column(name = "name")
-    String name;
+    private String name;
+
 }
