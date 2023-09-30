@@ -2,7 +2,9 @@ package com.kodlama.io.rentacar.webApi.controllers;
 
 import com.kodlama.io.rentacar.business.abstracts.BrandService;
 import com.kodlama.io.rentacar.business.requests.CreateBrandRequest;
+import com.kodlama.io.rentacar.business.requests.UpdateBrandRequest;
 import com.kodlama.io.rentacar.business.responses.GetAllBrandsResponse;
+import com.kodlama.io.rentacar.business.responses.GetByIdBrandResponse;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -26,4 +28,16 @@ public class BrandsController {
         this.brandService.add(createBrandRequest);
     }
 
+    @GetMapping("/{id}")
+    public GetByIdBrandResponse getById(@PathVariable int id){
+        return this.brandService.getById(id);
+    }
+    @PutMapping()
+    public void update(@RequestBody UpdateBrandRequest updateBrandRequest){
+        this.brandService.update(updateBrandRequest);
+    }
+    @DeleteMapping("/{id}")
+    public void delete(@PathVariable int id){
+        this.brandService.delete(id);
+    }
 }
