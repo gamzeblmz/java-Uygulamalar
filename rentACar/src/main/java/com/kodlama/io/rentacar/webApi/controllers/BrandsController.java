@@ -4,6 +4,7 @@ import com.kodlama.io.rentacar.business.abstracts.BrandService;
 import com.kodlama.io.rentacar.business.requests.CreateBrandRequest;
 import com.kodlama.io.rentacar.business.responses.GetAllBrandsResponse;
 import lombok.AllArgsConstructor;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -20,6 +21,7 @@ public class BrandsController {
     }
 
     @PostMapping
+    @ResponseStatus(code = HttpStatus.CREATED)
     public void add(@RequestBody CreateBrandRequest createBrandRequest) {
         this.brandService.add(createBrandRequest);
     }
