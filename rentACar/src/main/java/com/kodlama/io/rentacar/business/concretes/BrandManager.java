@@ -6,7 +6,6 @@ import com.kodlama.io.rentacar.business.responses.GetAllBrandsResponse;
 import com.kodlama.io.rentacar.dataAccess.abstracts.BrandRepository;
 import com.kodlama.io.rentacar.entities.concretes.Brand;
 import lombok.AllArgsConstructor;
-import lombok.Getter;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
