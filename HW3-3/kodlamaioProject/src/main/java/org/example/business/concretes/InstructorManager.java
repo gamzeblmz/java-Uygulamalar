@@ -1,5 +1,6 @@
 package org.example.business.concretes;
 
+import org.example.core.ILogger;
 import org.example.dataAccess.IInstructor;
 import org.example.entities.Instructor;
 
@@ -9,13 +10,16 @@ public class InstructorManager {
 
 
     IInstructor iInstructor;
+    ILogger[] loggers;
 
-    public InstructorManager(IInstructor iInstructor) {
+    public InstructorManager(IInstructor iInstructor,ILogger[] loggers) {
         this.iInstructor = iInstructor;
+        this.loggers=loggers;
     }
 
     public void add(Instructor instructor) {
         iInstructor.add(instructor);
+        log(instructor.getFirstName()+' '+instructor.getLastName());
     }
 
 
@@ -37,4 +41,10 @@ public class InstructorManager {
     public Instructor getById(int id) {
         return iInstructor.getById(id);
     }
+    public void log(String message){
+        for (ILogger logger :loggers){
+            logger.Log(message);
+        }
+    }
 }
+

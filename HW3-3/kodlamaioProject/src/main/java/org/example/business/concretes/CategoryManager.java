@@ -1,17 +1,21 @@
 package org.example.business.concretes;
 
+import org.example.core.ILogger;
 import org.example.dataAccess.ICategoryDao;
 import org.example.entities.Category;
 import org.example.entities.Course;
 
 import java.util.List;
+import java.util.logging.Logger;
 
 public class CategoryManager {
 
     ICategoryDao iCategoryDao;
+    ILogger[] loggers;
 
-    public CategoryManager(ICategoryDao iCategoryDao) {
+    public CategoryManager(ICategoryDao iCategoryDao, ILogger[] loggers) {
         this.iCategoryDao = iCategoryDao;
+        this.loggers = loggers;
     }
 
     public void add(Category category) {
@@ -24,6 +28,7 @@ public class CategoryManager {
                 }
             }
         }
+        log(category.getName());
         iCategoryDao.add(category);
     }
 
@@ -47,5 +52,11 @@ public class CategoryManager {
         Category category = iCategoryDao.getById(id);
         System.out.println(category.getName());
         return iCategoryDao.getById(id);
+    }
+
+    public void log(String message) {
+        for (ILogger logger : loggers) {
+            logger.Log(message);
+        }
     }
 }

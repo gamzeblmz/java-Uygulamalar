@@ -1,5 +1,6 @@
 package org.example.business.concretes;
 
+import org.example.core.ILogger;
 import org.example.dataAccess.ICourseDao;
 import org.example.entities.Course;
 
@@ -7,9 +8,10 @@ import java.util.List;
 
 public class CourseManager {
     ICourseDao iCourseDao;
-
-    public CourseManager(ICourseDao iCourseDao) {
+    ILogger[] loggers;
+    public CourseManager(ICourseDao iCourseDao,ILogger[] loggers) {
         this.iCourseDao = iCourseDao;
+        this.loggers= loggers;
     }
 
     public void add(Course course) {
@@ -27,6 +29,7 @@ public class CourseManager {
             }
         }
         iCourseDao.add(course);
+        log(course.getName());
     }
 
     public List<Course> getAll() {
@@ -45,5 +48,10 @@ public class CourseManager {
         Course course = iCourseDao.getById(id);
         System.out.println(course.getName());
         return course;
+    }
+    public void log(String message){
+        for (ILogger logger :loggers){
+            logger.Log(message);
+        }
     }
 }
