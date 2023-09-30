@@ -1,6 +1,7 @@
 package com.kodlama.io.rentacar.webApi.controllers;
 
 import com.kodlama.io.rentacar.business.abstracts.BrandService;
+import com.kodlama.io.rentacar.business.responses.GetAllBrandsResponse;
 import com.kodlama.io.rentacar.entities.concretes.Brand;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,7 +17,7 @@ public class BrandsController {
     private BrandService brandService;
 
     @GetMapping("/getAll")
-    public List<Brand> getAll(){
+    public List<GetAllBrandsResponse> getAll(){
         return brandService.getAll();
     }
 
