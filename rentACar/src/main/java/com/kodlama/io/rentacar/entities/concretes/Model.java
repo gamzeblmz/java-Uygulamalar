@@ -1,21 +1,16 @@
 package com.kodlama.io.rentacar.entities.concretes;
 
+import jakarta.persistence.*;
 import lombok.*;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import java.util.List;
 
+@Entity
+@Table(name = "models")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "colours")
-@Entity
-public class Colour {
-
+public class Model {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
@@ -23,4 +18,11 @@ public class Colour {
 
     @Column(name = "name")
     private String name;
+
+    @ManyToOne
+    @JoinColumn(name = "brand_id")
+    private Brand brand;
+
+    @OneToMany(mappedBy = "model")
+    private List<Car> cars;
 }
