@@ -1,6 +1,7 @@
 package com.kodlama.io.rentacar.business.concretes;
 
 import com.kodlama.io.rentacar.business.abstracts.ModelService;
+import com.kodlama.io.rentacar.business.requests.CreateModelRequest;
 import com.kodlama.io.rentacar.business.responses.GetAllModelsResponse;
 import com.kodlama.io.rentacar.core.utilities.mappers.ModelMapperService;
 import com.kodlama.io.rentacar.dataAccess.abstracts.ModelRepository;
@@ -23,6 +24,12 @@ public class ModelManager implements ModelService {
         List<GetAllModelsResponse> getAllModelsResponses = models.stream().map(model -> modelMapperService.forResponse()
                 .map(model, GetAllModelsResponse.class)).collect(Collectors.toList());
         return getAllModelsResponses;
+    }
+
+    @Override
+    public void add(CreateModelRequest createModelRequest) {
+        Model model = this.modelMapperService.forRequest().map(createModelRequest, Model.class);
+        this.modelRepository.save(model);
     }
 
 }
