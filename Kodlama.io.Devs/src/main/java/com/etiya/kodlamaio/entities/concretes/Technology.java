@@ -1,24 +1,25 @@
 package com.etiya.kodlamaio.entities.concretes;
 
 import jakarta.persistence.*;
-import lombok.*;
-
-import java.util.List;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name = "Languages")
+@Table(name = "Technologies")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Language {
+public class Technology {
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+
     @Column(name = "name")
     private String name;
 
-    @OneToMany
-    private List<Technology> technologies;
-
+    @ManyToOne
+    @JoinColumn(name = "language_id")
+    Language language;
 }
