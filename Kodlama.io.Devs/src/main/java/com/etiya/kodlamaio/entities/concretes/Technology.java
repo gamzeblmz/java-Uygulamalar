@@ -21,5 +21,5 @@ public class Technology {
 
     @ManyToOne
     @JoinColumn(name = "language_id")
-    Language language;
+    private Language language;
 }
