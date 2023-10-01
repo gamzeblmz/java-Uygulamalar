@@ -5,6 +5,7 @@ import com.kodlama.io.rentacar.business.requests.CreateBrandRequest;
 import com.kodlama.io.rentacar.business.requests.UpdateBrandRequest;
 import com.kodlama.io.rentacar.business.responses.GetAllBrandsResponse;
 import com.kodlama.io.rentacar.business.responses.GetByIdBrandResponse;
+import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -24,20 +25,22 @@ public class BrandsController {
 
     @PostMapping
     @ResponseStatus(code = HttpStatus.CREATED)
-    public void add(@RequestBody CreateBrandRequest createBrandRequest) {
+    public void add(@RequestBody @Valid CreateBrandRequest createBrandRequest) {
         this.brandService.add(createBrandRequest);
     }
 
     @GetMapping("/{id}")
-    public GetByIdBrandResponse getById(@PathVariable int id){
+    public GetByIdBrandResponse getById(@PathVariable int id) {
         return this.brandService.getById(id);
     }
+
     @PutMapping()
-    public void update(@RequestBody UpdateBrandRequest updateBrandRequest){
+    public void update(@RequestBody UpdateBrandRequest updateBrandRequest) {
         this.brandService.update(updateBrandRequest);
     }
+
     @DeleteMapping("/{id}")
-    public void delete(@PathVariable int id){
+    public void delete(@PathVariable int id) {
         this.brandService.delete(id);
     }
 }
