@@ -5,11 +5,11 @@ import com.etiya.kodlamaio.business.requests.CreateLanguageRequest;
 import com.etiya.kodlamaio.business.requests.UpdateLanguageRequest;
 import com.etiya.kodlamaio.business.responses.GetAllLanguageResponse;
 import com.etiya.kodlamaio.business.responses.GetByIdLanguageResponse;
+import com.etiya.kodlamaio.business.rules.LanguageBusinessRules;
 import com.etiya.kodlamaio.core.utilities.mappers.ModelMapperService;
 import com.etiya.kodlamaio.dataAccess.abstracts.LanguageRepository;
 import com.etiya.kodlamaio.entities.concretes.Language;
 import lombok.AllArgsConstructor;
-import org.modelmapper.internal.bytebuddy.asm.Advice;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -20,9 +20,11 @@ import java.util.stream.Collectors;
 public class LanguageManager implements LanguageService {
     private LanguageRepository languageRepository;
     private ModelMapperService modelMapperService;
+    private LanguageBusinessRules languageBusinessRules;
 
     @Override
     public void add(CreateLanguageRequest createLanguageRequest) {
+        this.languageBusinessRules.checkIfLanguageNameExist(createLanguageRequest.getName());
         Language language = this.modelMapperService.forRequest()
                 .map(createLanguageRequest, Language.class);
         this.languageRepository.save(language);
