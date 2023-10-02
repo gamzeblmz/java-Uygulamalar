@@ -7,5 +7,8 @@ import java.util.List;
 
 public interface ModelService {
     List<GetAllModelsResponse> getAll();
+
     void add(CreateModelRequest createModelRequest);
+
+    public void delete(int id);
 }

@@ -25,4 +25,9 @@ public class ModelsController {
     public List<GetAllModelsResponse> getAll() {
         return this.modelService.getAll();
     }
+
+    @DeleteMapping("/{id}")
+    public void delete(@PathVariable int id) {
+        modelService.delete(id);
+    }
 }

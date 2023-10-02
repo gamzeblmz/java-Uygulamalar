@@ -1,5 +1,6 @@
 package com.kodlama.io.rentacar.entities.concretes;
 
+import com.kodlama.io.rentacar.core.utilities.enums.MaintenanceStatus;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -30,4 +31,9 @@ public class Car {
     @ManyToOne
     @JoinColumn(name = "model_id")
     private Model model;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "status")
+    private MaintenanceStatus status;
+
 }

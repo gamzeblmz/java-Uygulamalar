@@ -32,4 +32,9 @@ public class ModelManager implements ModelService {
         this.modelRepository.save(model);
     }
 
+    @Override
+    public void delete(int id) {
+        this.modelRepository.deleteById(id);
+    }
+
 }
