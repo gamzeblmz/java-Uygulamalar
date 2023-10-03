@@ -1,8 +1,9 @@
 package com.kodlama.io.rentacar.entities.concretes;
 
-import com.kodlama.io.rentacar.entities.abstracts.enums.MaintenanceStatus;
 import jakarta.persistence.*;
 import lombok.*;
+
+import java.util.List;
 
 @Data
 @AllArgsConstructor
@@ -32,8 +33,6 @@ public class Car {
     @JoinColumn(name = "model_id")
     private Model model;
 
-    @Enumerated(EnumType.STRING)
-    @Column(name = "status")
-    private MaintenanceStatus status;
-
+    @OneToMany(mappedBy = "car")
+    private List<Maintenance> maintenances;
 }
