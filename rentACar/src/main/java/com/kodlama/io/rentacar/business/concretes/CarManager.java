@@ -5,7 +5,7 @@ import com.kodlama.io.rentacar.business.requests.CreateCarRequest;
 import com.kodlama.io.rentacar.business.requests.UpdateCarRequest;
 import com.kodlama.io.rentacar.business.responses.GetAllCarResponse;
 import com.kodlama.io.rentacar.business.responses.GetByIdCarResponse;
-import com.kodlama.io.rentacar.core.utilities.enums.MaintenanceStatus;
+import com.kodlama.io.rentacar.entities.abstracts.enums.MaintenanceStatus;
 import com.kodlama.io.rentacar.core.utilities.mappers.ModelMapperService;
 import com.kodlama.io.rentacar.dataAccess.abstracts.CarRepository;
 import com.kodlama.io.rentacar.entities.concretes.Car;

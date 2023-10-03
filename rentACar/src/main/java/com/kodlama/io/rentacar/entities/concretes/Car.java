@@ -1,6 +1,6 @@
 package com.kodlama.io.rentacar.entities.concretes;
 
-import com.kodlama.io.rentacar.core.utilities.enums.MaintenanceStatus;
+import com.kodlama.io.rentacar.entities.abstracts.enums.MaintenanceStatus;
 import jakarta.persistence.*;
 import lombok.*;
 

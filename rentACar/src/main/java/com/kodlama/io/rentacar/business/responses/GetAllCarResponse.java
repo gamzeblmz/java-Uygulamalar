@@ -1,6 +1,6 @@
 package com.kodlama.io.rentacar.business.responses;
 
-import com.kodlama.io.rentacar.core.utilities.enums.MaintenanceStatus;
+import com.kodlama.io.rentacar.entities.abstracts.enums.MaintenanceStatus;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

@@ -1,4 +1,4 @@
-package com.kodlama.io.rentacar.core.utilities.enums;
+package com.kodlama.io.rentacar.entities.abstracts.enums;
 
 public enum MaintenanceStatus {
     RENTED,
