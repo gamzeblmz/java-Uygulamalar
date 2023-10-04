@@ -8,24 +8,24 @@ import lombok.NoArgsConstructor;
 import java.util.Date;
 
 @Entity
-@Table(name = "maintenances")
+@Table(name = "paymanents")
 @AllArgsConstructor
-@Data
 @NoArgsConstructor
-public class Maintenance {
-
+@Data
+public class Paymanent {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private int id;
 
-    @Column(name = "sendDate", updatable = false)
-    private Date sendDate;
+    @Column(name = "paymanentDate", updatable = false)
+    private Date paymanentDate;
 
-    @Column(name = "returnDate")
-    private Date returnDate;
+    @Column(name = "totalPrice")
+    private double totalPrice;
 
-    @ManyToOne
-    @JoinColumn(name = "car_id")
-    private Car car;
+    @OneToOne(mappedBy = "rental_id")
+    private Rental rental;
+
+
 }
