@@ -15,4 +15,5 @@ public class CreateRentalRequest {
     private int carId;
     private int rentedForDays;
     private double dailyPrice;
+    private int baseCustomerId;
 }

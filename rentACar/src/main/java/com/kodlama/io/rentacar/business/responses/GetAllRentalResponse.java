@@ -17,4 +17,5 @@ public class GetAllRentalResponse {
     private int rentedForDays;
     private String plate;
     private boolean paid;
+    private int customerId;
 }
