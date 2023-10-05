@@ -17,4 +17,5 @@ public class CreateBankRequest {
     @NotBlank
     private String cardName;
 
+
 }

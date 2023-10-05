@@ -19,6 +19,7 @@ import com.kodlama.io.rentacar.entities.concretes.Rental;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -43,6 +44,7 @@ public class RentalManager implements RentalService {
     public void add(CreateRentalRequest createRentalRequest) {
         if(rentalBusinessRules.checkIfCarAvailable(createRentalRequest.getCarId())){
             Rental rental = modelMapperService.forRequest().map(createRentalRequest, Rental.class);
+            rental.setStartedDate(new Date());
             rentalRepository.save(rental);
         }
 

@@ -12,7 +12,7 @@ public class PaymentBusinessRules {
 
     public double calculateTotalPrice(int id) {
         Rental rental = rentalRepository.findById(id).orElseThrow();
-        double totalPrice = rental.getRentedForDays() * rental.getDailyPrice();
+        double totalPrice = rental.getRantedForDays() * rental.getDailyPrice();
         return totalPrice;
     }
 

@@ -14,5 +14,5 @@ public class CreateRentalRequest {
     @NotNull
     private int carId;
     private int rentedForDays;
-
+    private double dailyPrice;
 }

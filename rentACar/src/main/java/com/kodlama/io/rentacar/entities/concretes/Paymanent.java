@@ -18,13 +18,14 @@ public class Paymanent {
     @Column(name = "id")
     private int id;
 
-    @Column(name = "paymanentDate", updatable = false)
-    private Date paymanentDate;
+    @OneToOne
+    @JoinColumn(name = "rental_id")
+    private Rental rental;
+
+    @Column(name = "startedDate")
+    private Date date;
 
     @Column(name = "totalPrice")
     private double totalPrice;
-
-    @OneToOne(mappedBy = "paymanent")
-    private Rental rental;
 
 }

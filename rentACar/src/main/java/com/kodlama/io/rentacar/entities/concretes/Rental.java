@@ -13,29 +13,28 @@ import java.util.Date;
 @NoArgsConstructor
 @Data
 public class Rental {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private int id;
 
-    @Column(name = "startedDate", updatable = false)
+    @Column(name = "rantedForDays")
+    private int rantedForDays;
+
+    @Column(name = "startedDate")
     private Date startedDate;
 
-    @Column(name = "dailyPrice")
-    private double dailyPrice;
+    @ManyToOne()
+    @JoinColumn(name = "carId")
+    private Car car;
 
-    @Column(name = "rentedForDays")
-    private int rentedForDays;
+    @OneToOne(mappedBy = "rental")
+    private Paymanent payment;
 
     @Column(name = "paid")
     boolean paid = false;
 
-    @ManyToOne
-    @JoinColumn(name = "car_id")
-    private Car car;
+    @Column(name = "dailyPrice")
+    private double dailyPrice;
 
-    @OneToOne
-    @JoinColumn(name = "rental")
-    private Paymanent paymanent;
 }
