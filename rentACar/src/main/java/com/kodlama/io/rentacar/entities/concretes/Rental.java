@@ -37,4 +37,8 @@ public class Rental {
     @Column(name = "dailyPrice")
     private double dailyPrice;
 
+    @ManyToOne()
+    @JoinColumn(name="rental_id")
+    private BaseCustomer baseCustomer;
+
 }

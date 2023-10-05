@@ -7,11 +7,13 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class GetAllCarResponse {
+public class GetAllCorporateCustomerResponse {
+
     private int id;
-    private String plate;
-    private double dailyPrice;
-    private int modelYear;
-    private int state;
-    private String modelName;
+    private String mail;
+    private String phoneNumber;
+    private String taxNumber;
+    private String companyName;
+    private String contactName;
+
 }
