@@ -36,6 +36,6 @@ public class Rental {
     private Car car;
 
     @OneToOne
-    @JoinColumn(name = "paymanenet_id")
+    @JoinColumn(name = "rental")
     private Paymanent paymanent;
 }

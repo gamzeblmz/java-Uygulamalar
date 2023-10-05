@@ -5,6 +5,7 @@ import com.kodlama.io.rentacar.business.requests.CreateCarRequest;
 import com.kodlama.io.rentacar.business.requests.UpdateCarRequest;
 import com.kodlama.io.rentacar.business.responses.GetAllCarResponse;
 import com.kodlama.io.rentacar.business.responses.GetByIdCarResponse;
+import com.kodlama.io.rentacar.business.rules.CarBusinessRules;
 import com.kodlama.io.rentacar.core.utilities.mappers.ModelMapperService;
 import com.kodlama.io.rentacar.dataAccess.abstracts.CarRepository;
 import com.kodlama.io.rentacar.entities.concretes.Car;
@@ -20,9 +21,10 @@ public class CarManager implements CarService {
 
     private ModelMapperService modelMapperService;
     private CarRepository carRepository;
-
+    private CarBusinessRules carBusinessRules;
     @Override
     public void add(CreateCarRequest createCarRequest) {
+        this.carBusinessRules.checkIfCarPlateExists(createCarRequest.getPlate());
         Car car = this.modelMapperService.forRequest().map(createCarRequest, Car.class);
         this.carRepository.save(car);
     }

@@ -24,8 +24,7 @@ public class Paymanent {
     @Column(name = "totalPrice")
     private double totalPrice;
 
-    @OneToOne(mappedBy = "rental_id")
+    @OneToOne(mappedBy = "paymanent")
     private Rental rental;
-
 
 }
